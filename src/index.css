@@ -1,0 +1,97 @@
+/* === 全局设置 === */
+:root {
+  --accent: #00ffcc;
+  --accent-dark: #006666;
+  --muted: #9ca3af;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* small helper */
+.muted { color: var(--muted); }
+
+/* === 登录 / 注册 === */
+.login-bg {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+}
+.login-box {
+  background: rgba(12, 12, 12, 0.9);
+  padding: 34px;
+  border-radius: 14px;
+  box-shadow: 0 0 28px rgba(0, 255, 150, 0.14);
+  text-align: center;
+  width: 320px;
+  animation: fadeIn 0.9s ease-in-out;
+}
+.login-title {
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent), 0 0 24px var(--accent-dark);
+  letter-spacing: 3px;
+}
+.login-form { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.login-input {
+  width: 100%;
+  padding: 10px;
+  background: #121212;
+  border: 1px solid rgba(0,255,200,0.06);
+  color: var(--accent);
+  border-radius: 8px;
+  outline: none;
+}
+.login-input:focus { box-shadow: 0 0 12px rgba(0,255,200,0.12); border-color: rgba(0,255,200,0.3); }
+.login-btn {
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+}
+.switch-text { margin-top: 12px; font-size: 0.92rem; color: var(--muted); }
+.switch-text a { color: var(--accent); text-decoration: none; }
+.switch-text a:hover { text-shadow: 0 0 8px var(--accent); }
+
+/* === 大厅 === */
+.home-bg { min-height: 100vh; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #050606 0%, #000 100%); }
+.home-box { background: rgba(12,12,12,0.9); padding: 34px; border-radius: 14px; text-align:center; box-shadow: 0 0 26px rgba(0,255,150,0.12); width: 520px; }
+.home-title { font-size: 1.8rem; color: var(--accent); text-shadow: 0 0 12px var(--accent); margin-bottom: 6px; }
+.home-buttons { display:flex; flex-direction:column; gap:12px; margin-top: 18px; }
+.home-btn { padding: 12px; border-radius: 10px; border: none; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: black; font-weight: 700; cursor:pointer; transition: transform .12s, box-shadow .12s; }
+.home-btn:hover { transform: translateY(-4px); box-shadow: 0 6px 22px rgba(0,255,200,0.12); }
+.home-btn.danger { background: linear-gradient(135deg,#ff7b7b,#ef4444); color: #fff; }
+
+/* === 页面通用 / 游戏 / 教程 === */
+.page-bg { min-height: 100vh; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #070a0b 0%, #000 100%); padding: 24px; }
+.page-title { color: var(--accent); font-size: 1.7rem; text-shadow: 0 0 8px var(--accent); margin-bottom: 10px; }
+
+/* characters */
+.home-box > .muted { margin-bottom: 12px; }
+
+/* canvas / game area styles applied inline when needed */
+
+/* === small buttons used inside pages === */
+button.home-btn { display: inline-block; }
+button.home-btn.danger { background: #ef4444; color: #fff; }
+
+/* === animations === */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* responsive small */
+@media (max-width: 640px) {
+  .home-box, .login-box { width: 92%; padding: 20px; }
+  canvas { width: 100% !important; height: auto !important; }
+}
